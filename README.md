@@ -119,7 +119,8 @@ Zhao, S., Brekelmans, R., Makhzani, A., & Grosse, R. (2024). Probabilistic infer
 
 ## 🧑‍💻 Contributors
 
-- Seugyoo Lee (@DopeorNope-Lee)
+- **Seungyoo Lee** ([@DopeorNope-Lee](https://github.com/DopeorNope-Lee))  
+  [LinkedIn](https://www.linkedin.com/in/seungyoo-lee-62b098281/) | [Hugging Face](https://huggingface.co/DopeorNope) | [GitHub](https://github.com/DopeorNope-Lee)
 
 
 ## 📄 License
