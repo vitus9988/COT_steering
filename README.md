@@ -33,6 +33,32 @@ pip install -r requirements.txt
 
 > 📝 Requires Python 3.11+.
 
+
+### ⚠️ Environment Compatibility Notice
+
+This repository has been tested under the following environment:
+
+- **CUDA Driver Version**: `535.183.06`  
+- **CUDA Toolkit Version**: `12.2`  
+- **PyTorch Version**: `2.6.0`  
+- **vLLM Version**: `0.7.3`
+
+> ⚠️ **Note:** vLLM is highly sensitive to CUDA and PyTorch version compatibility.  
+> Please ensure that your CUDA **driver and runtime libraries** match the version required by vLLM and PyTorch.  
+> If your system uses a different CUDA version (e.g., 11.8, 12.1, or 12.4), you **must install vLLM and PyTorch accordingly**, using the appropriate CUDA wheels.
+
+You can verify your environment using:
+
+```bash
+nvidia-smi         # For driver version
+nvcc --version     # For toolkit version
+python -c "import torch; print(torch.__version__)"
+```
+
+For more information, refer to the [vLLM installation guide](https://github.com/vllm-project/vllm#installation) and ensure that your runtime environment aligns with your CUDA setup.
+
+
+
 ## 🚀 Usage
 
 Run inference with CoT Steering enabled:
