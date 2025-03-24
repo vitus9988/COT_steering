@@ -20,7 +20,7 @@ By applying our method, which balances **diversity** and **structured control**,
 ```
 .
 ├── template/         # Answer parsing Template Documentation
-├── scripts/          # COT scripts & Examples
+├── cot_vllm.py          # COT scripts & Examples
 └── README.md         # Project documentation
 ```
 
