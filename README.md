@@ -32,7 +32,7 @@ cd cot-steering
 pip install -r requirements.txt
 ```
 
-> 📝 Requires Python 3.8+ and PyTorch.
+> 📝 Requires Python 3.11+.
 
 ## 🚀 Usage
 
