@@ -1,4 +1,4 @@
-# CoT Steering without Prompting
+# CoT Steering
 
 **Chain-of-Thought reasoning without prompting** is an effective decoding strategy that expands the model’s search space by sampling from the **top-k tokens** without relying on explicit prompts. This approach facilitates the discovery of latent reasoning paths internal to the model, making it a promising direction for structured reasoning tasks.
 
