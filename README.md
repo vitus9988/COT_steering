@@ -18,9 +18,8 @@ By applying our method, which balances **diversity** and **structured control**,
 ## 📁 Repository Structure
 
 ```
-.
 ├── template/         # Answer parsing Template Documentation
-├── cot_vllm.py          # COT scripts & Examples
+├── cot_vllm.py       # COT scripts & Examples
 └── README.md         # Project documentation
 ```
 
