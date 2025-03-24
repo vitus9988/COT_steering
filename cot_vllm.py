@@ -494,7 +494,7 @@ def main():
     parser.add_argument("--STEERING_TOKEN", type=str, default="",
                         help="Token appended at the end of the first-pass prompts.")
     parser.add_argument("--EXTRACT_TOKEN", type=str, default="",
-                        help="Token appended at the end of the first-pass prompts.")
+                        help="Token for extracted Signal")
     
     args = parser.parse_args()
 
