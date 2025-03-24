@@ -39,7 +39,7 @@ pip install -r requirements.txt
 Run inference with CoT Steering enabled:
 
 ```bash
-python src/inference.py --config configs/example.yaml
+sh example.sh
 ```
 
 ## 📊 Evaluation
