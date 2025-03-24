@@ -1,26 +1,26 @@
 # CoT Steering without Prompting
 
-This repository aims to develop **Chain-of-Thought (CoT) Steering** based on the *CoT without Prompting* paradigm.  
-We focus on improving the model’s latent reasoning ability **without additional training**, by leveraging **Test-Time Scaling** techniques.
+**Chain-of-Thought reasoning without prompting** is an effective decoding strategy that expands the model’s search space by sampling from the **top-k tokens** without relying on explicit prompts. This approach facilitates the discovery of latent reasoning paths internal to the model, making it a promising direction for structured reasoning tasks.
 
-## 🔍 Overview
+However, existing implementations of this method often suffer from **critical deviations** from the original paper. These include incorrect modifications to the decoding process, improper handling of aggregation mechanisms, and failure to preserve the intended search semantics. To address these limitations, we re-implemented the method faithfully to the original formulation.
 
-Traditional CoT methods rely on explicit prompts or handcrafted examples to elicit step-by-step reasoning.  
-This project explores how CoT dynamics can be *steered internally* during inference without such external guidance, offering a scalable and prompt-free approach to reasoning.
+Moreover, we extend it by introducing steering tokens as a mechanism to explicitly condition the model’s reasoning trajectory. This narrows the search space in a controlled way, enabling the model to more reliably follow structured CoT paths. While this steering can theoretically be applied in the latent space, we instead apply it at the **token level**, leveraging the autoregressive nature of the model to inject **constraints directly into the decoding process**.
 
-Key objectives:
-- Steer latent CoT behavior without prompt engineering
-- Apply test-time modulation techniques to enhance reasoning
-- Evaluate controllability and performance across reasoning tasks
+To perform unconstrained CoT decoding without steering, simply set the `STEERING_TOKEN` to an `empty string ('')`.
+
+## 🧠 Why CoT is a Search Problem
+
+At its core, **CoT reasoning is a search problem**—the model explores multiple candidate trajectories to find an optimal reasoning path that leads to the correct answer. However, due to biases acquired during pretraining or fine-tuning, the model’s default search behavior is often limited to a narrow and suboptimal region of the solution space.
+
+By applying our method, which balances **diversity** and **structured control**, we are able to recover richer reasoning trajectories and guide the model toward more effective CoT outputs, without any additional training.
+
 
 ## 📁 Repository Structure
 
 ```
 .
-├── configs/          # Experiment configurations
-├── src/              # Core implementation
-├── eval/             # Evaluation scripts and benchmarks
-├── scripts/          # Training / inference scripts
+├── template/         # Answer parsing Template Documentation
+├── scripts/          # COT scripts & Examples
 └── README.md         # Project documentation
 ```
 
@@ -71,10 +71,26 @@ Given this, we adopted the **token-level steering method**, which offers greater
 
 
 
-
 ## 📌 Citation
 
-Coming soon.
+Chen, H., Feng, Y., Liu, Z., Yao, W., Prabhakar, A., Heinecke, S., ... & Wang, H. (2024). Language models are hidden reasoners: Unlocking latent reasoning capabilities via self-rewarding. *arXiv preprint arXiv:2411.04282*.
+
+Hao, S., Sukhbaatar, S., Su, D., Li, X., Hu, Z., Weston, J., & Tian, Y. (2024). Training large language models to reason in a continuous latent space. *arXiv preprint arXiv:2412.06769*.
+
+Muennighoff, N., Yang, Z., Shi, W., Li, X. L., Fei-Fei, L., Hajishirzi, H., ... & Hashimoto, T. (2025). S1: Simple test-time scaling. *arXiv preprint arXiv:2501.19*.
+
+Rodriguez, P., Blaas, A., Klein, M., Zappella, L., Apostoloff, N., Cuturi, M., & Suau, X. (2024). Controlling language and diffusion models by transporting activations. *arXiv preprint arXiv:2410.23054*.
+
+Snell, C., Lee, J., Xu, K., & Kumar, A. (2024). Scaling LLM test-time compute optimally can be more effective than scaling model parameters. *arXiv preprint arXiv:2408.03314*.
+
+Wang, B., Min, S., Deng, X., Shen, J., Wu, Y., Zettlemoyer, L., & Sun, H. (2022). Towards understanding chain-of-thought prompting: An empirical study of what matters. *arXiv preprint arXiv:2212.10001*.
+
+Wang, X., & Zhou, D. (2024). Chain-of-thought reasoning without prompting. *arXiv preprint arXiv:2402.10200*.
+
+Zhang, Z., Zhang, A., Li, M., & Smola, A. (2022). Automatic chain of thought prompting in large language models. *arXiv preprint arXiv:2210.03493*.
+
+Zhao, S., Brekelmans, R., Makhzani, A., & Grosse, R. (2024). Probabilistic inference in language models via twisted sequential Monte Carlo. *arXiv preprint arXiv:2404.17546*.
+
 
 ## 🧑‍💻 Contributors
 
