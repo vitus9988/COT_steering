@@ -481,6 +481,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--tensor_parallel_size", type=int, default=2)
     parser.add_argument("--max_model_len", type=int, default=32768)
+    parser.add_argument("--max_new_token", type=int, default=16384)
     parser.add_argument("--SAVE_DIR", type=str, default="result.csv")
     parser.add_argument("--model_name", type=str, required=True)
     parser.add_argument("--tok_name", type=str, required=True)
@@ -526,7 +527,7 @@ def main():
         model=model,
         prompts=prompts,
         k=args.num_k,
-        max_new_tokens=16384,  # Adjust as needed
+        max_new_tokens=args.max_new_token,  # Adjust as needed
         chunk_size=args.batch_size
     )
 
