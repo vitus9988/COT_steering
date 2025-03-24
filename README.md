@@ -15,6 +15,21 @@ At its core, **CoT reasoning is a search problem**—the model explores multiple
 By applying our method, which balances **diversity** and **structured control**, we are able to recover richer reasoning trajectories and guide the model toward more effective CoT outputs, without any additional training.
 
 
+## 🎛️ Steering with Chat Template + Token Constraints
+
+**Steering**, in our context, refers to imposing constraints on the model’s decoding behavior to restrict its **search space** or to **guide generation** toward desired directions. We introduce a lightweight yet effective approach by combining **chat templates** with **steering tokens**.
+
+Specifically, we leverage the LLM's built-in **chat formatting logic**—such as the alternation of user and assistant turns—and **inject steering tokens** at the beginning of the assistant’s response. By doing so, the model is **conditioned to generate outputs as if they were its own responses**, while being subtly constrained toward our intended reasoning trajectory.
+
+This approach offers a powerful yet simple mechanism:
+- It is **prompt-agnostic**, working with standard chat interfaces.
+- It is **compact and modular**, requiring no architectural change.
+- It provides **flexible control** over the model’s generation space.
+
+Although intuitive, this method proves highly **effective in steering Chain-of-Thought reasoning**, especially when the steering token is placed precisely at the assistant’s turn. It allows the model to search within a constrained yet expressive subspace, enabling **diverse but controllable reasoning paths** under structured decoding formats.
+
+
+
 ## 📁 Repository Structure
 
 ```
