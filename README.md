@@ -27,8 +27,8 @@ By applying our method, which balances **diversity** and **structured control**,
 ## ⚙️ Installation
 
 ```bash
-git clone https://github.com/your-username/cot-steering.git
-cd cot-steering
+git clone https://github.com/Marker-Inc-Korea/COT_steering
+cd COT_steering
 pip install -r requirements.txt
 ```
 
