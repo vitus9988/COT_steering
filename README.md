@@ -57,12 +57,20 @@ Through CoT Steering, we achieved a significant improvement in performance witho
 | deepseek r1     | 78                        |
 | O1 mini      | 78                        |
 | FuseO1-DeepSeekR1-QwQ-SkyT1-32B(Base line)            | 67                    |
-| FuseO1-DeepSeekR1-QwQ-SkyT1-32B            | **84**                    |
+| FuseO1-DeepSeekR1-QwQ-SkyT1-32B(COT Steering)            | **84**                    |
 | O1 preview             | 97                    |
 
 The baseline model achieved a score in the 60s range. After applying our CoT Steering mechanism, the model reached a score of **84**, demonstrating the potential of test-time reasoning modulation in high-stakes language comprehension tasks.
 
-Further evaluations on different subjects and reasoning benchmarks are in progress.
+We enhanced the model’s latent reasoning capability through **CoT Steering**, enabling notable performance gains without additional training.
+
+Notably, while most comparison baselines utilize models ranging from **100B to 685B parameters**, our approach achieved competitive performance using a **33B-parameter** model. This result highlights the effectiveness and efficiency of CoT Steering, demonstrating its potential to unlock strong reasoning abilities even in relatively smaller models.
+
+While steering can be applied either at the **token level** or in the **latent space** or using a **potential function**, we observed no significant performance difference between the two approaches.
+Given this, we adopted the **token-level steering method**, which offers greater `flexibility` and `computational efficiency`, making it more **practical for real-world deployment**.
+
+
+
 
 ## 📌 Citation
 
@@ -70,8 +78,8 @@ Coming soon.
 
 ## 🧑‍💻 Contributors
 
-- Your Name (@your_handle)
-- Additional contributors welcome!
+- Seugyoo Lee (@DopeorNope-Lee)
+
 
 ## 📄 License
 
