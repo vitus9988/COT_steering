@@ -84,13 +84,13 @@ sh example.sh
 
 ## 📊 Evaluation
 
-We evaluated the effectiveness of **CoT Steering without Prompting** on the **2025 Korean CSAT (수능) Language Section**, using the model `FuseAI/FuseO1-DeepSeekR1-QwQ-SkyT1-32B-Preview`.
+We evaluated the effectiveness of **CoT Steering without Prompting** on the **2025 Korean CSAT (수능) Korean-section**, using the model `FuseAI/FuseO1-DeepSeekR1-QwQ-SkyT1-32B-Preview`.
 
 Through CoT Steering, we achieved a significant improvement in performance without any additional training.
 
 ### 📈 Performance Comparison
 
-| Model                                      | Score (Language Section) |
+| Model                                      | Score (Korean CSAT) |
 |-------------------------------------------|---------------------------|
 | HyperClovaX     | 61                        |
 | gpt 4o       | 75                        |
