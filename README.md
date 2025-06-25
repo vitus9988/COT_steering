@@ -97,7 +97,7 @@ Through CoT Steering, we achieved a significant improvement in performance witho
 | deepseek r1     | 78                        |
 | O1 mini      | 78                        |
 | FuseO1-DeepSeekR1-QwQ-SkyT1-32B(Base line)            | 67                    |
-| Gukbap-Reasoning(COT Steering)            | **84**                    |
+| FuseO1-DeepSeekR1-QwQ-SkyT1-32B(COT Steering)            | **84**                    |
 | O1 preview             | 97                    |
 
 The baseline model achieved a score in the 60s range. After applying our CoT Steering mechanism, the model reached a score of **84**, demonstrating the potential of test-time reasoning modulation in high-stakes language comprehension tasks.
